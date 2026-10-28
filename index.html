@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem("wgmi.theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WGMI · Everyone at the table eats</title>
+<meta name="description" content="WGMI: a launchpad on Raydium LaunchLab, Solana, where everyone at the table eats. The dev sets the dials; 0% platform fee.">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="canonical" href="https://wgmi.work/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wgmi.work/">
+<meta property="og:title" content="WGMI · Everyone at the table eats">
+<meta property="og:description" content="WGMI: a launchpad on Raydium LaunchLab, Solana, where everyone at the table eats. The dev sets the dials; 0% platform fee.">
+<meta property="og:image" content="https://wgmi.work/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WGMI · Everyone at the table eats">
+<meta name="twitter:description" content="WGMI: a launchpad on Raydium LaunchLab, Solana, where everyone at the table eats. The dev sets the dials; 0% platform fee.">
+<meta name="twitter:image" content="https://wgmi.work/og.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logo/wgmi-tab-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="logo/wgmi-tab-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="logo/wgmi-tab-48.png">
+<link rel="icon" type="image/png" sizes="512x512" href="logo/wgmi-tab-512.png">
+<link rel="apple-touch-icon" href="logo/wgmi-tab-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Party Plates: everyone at the table is a plate with a face. Ink outlines, hard offset shadows, no gradients. */
+  :root {
+    --bg: #FFF3F8; --bg2: #FFE4F0; --card: #FFFFFF; --ink: #23102E; --muted: #6E5877; --line: #EBCFDE;
+    --accent: #FF4F9A; --accent2: #E0247A; --on-accent: #23102E; --brand: #3D5CFF; --brand2: #2A3FCC; --brand-text: #2F49E0;
+    --pink: #FF4F9A; --cobalt: #3D5CFF; --mint: #22CFA0; --lilac: #B79BFF; --sky: #7CD4FF; --plate-ink: #23102E;
+    --tint-pink: #FFD6E8; --tint-cobalt: #DCE2FF; --tint-mint: #CFF5E8; --tint-lilac: #EAE1FF;
+    --panel: #FFE4F0; --panel2: #FFD1E5; --tone1: #B79BFF; --tone2: #3D5CFF;
+    --outline: #23102E; --shadow: #23102E;
+    --display: "Bricolage Grotesque", "Arial Black", "Helvetica Neue", sans-serif;
+    --body: "Figtree", "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #170B21; --bg2: #331A47; --card: #24112F; --ink: #FFF3F8; --muted: #C2ABCB; --line: #3E2350;
+      --accent: #FF5FA5; --accent2: #FF4F9A; --brand-text: #9AAAFF;
+      --tint-pink: #46163A; --tint-cobalt: #26296A; --tint-mint: #123F37; --tint-lilac: #33225C;
+      --panel: #24112F; --panel2: #2E1640; --outline: #F3D3E4; --shadow: #FF4F9A;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #170B21; --bg2: #331A47; --card: #24112F; --ink: #FFF3F8; --muted: #C2ABCB; --line: #3E2350;
+    --accent: #FF5FA5; --accent2: #FF4F9A; --brand-text: #9AAAFF;
+    --tint-pink: #46163A; --tint-cobalt: #26296A; --tint-mint: #123F37; --tint-lilac: #33225C;
+    --panel: #24112F; --panel2: #2E1640; --outline: #F3D3E4; --shadow: #FF4F9A;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+  a { color: var(--brand-text); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
+  p { margin: 0 0 1em; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; }
+  @media (min-width: 720px) { .wrap { padding-inline: 32px; } }
+  .mono { font-family: var(--mono); font-size: 0.86em; word-break: break-all; }
+  .muted { color: var(--muted); }
+  section { padding: 56px 0; }
+  @media (min-width: 880px) { section { padding: 80px 0; } }
+  .kicker { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--ink); }
+  .kicker svg { width: 18px; height: 22px; }
+  h2 { font-size: clamp(2rem, 4.6vw, 3.1rem); font-stretch: 88%; margin-bottom: 14px; }
+  .lede { max-width: 58ch; font-size: clamp(1.02rem, 1.5vw, 1.18rem); color: var(--muted); margin-bottom: 28px; }
+  .lede b, .sub b { color: var(--ink); font-weight: 700; }
+  .word { display: block; height: 34px; width: auto; }
+  .word-dark { display: none; }
+  :root[data-theme="dark"] .word-light { display: none; }
+  :root[data-theme="dark"] .word-dark { display: block; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .word-light { display: none; } :root:not([data-theme="light"]) .word-dark { display: block; } }
+
+  /* header */
+  header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 2px solid var(--outline); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; padding-top: 4px; }
+  .links { display: none; gap: 24px; font-weight: 700; font-size: 15px; }
+  .links a { text-decoration: none; color: var(--ink); }
+  .links a:hover { color: var(--accent2); }
+  @media (min-width: 960px) { .links { display: flex; } }
+  .navr { display: flex; align-items: center; gap: 8px; }
+  .toggle { border: 2px solid var(--outline); background: var(--card); color: var(--ink); font: inherit; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; padding: 6px 11px; cursor: pointer; border-radius: 999px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; border: 2.5px solid var(--outline); box-shadow: 3px 3px 0 var(--shadow); white-space: nowrap; transition: transform .08s ease, box-shadow .08s ease; }
+  .btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--shadow); }
+  .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--shadow); }
+  .btn.primary { background: var(--accent); color: var(--on-accent); }
+  .btn.secondary { background: var(--card); color: var(--ink); }
+  .btn.small { min-height: 40px; padding: 0 16px; font-size: 15px; border-width: 2px; display: none; }
+  @media (min-width: 560px) { .btn.small { display: inline-flex; } }
+
+  /* hero */
+  .hero { display: grid; gap: 18px; padding: 32px 0 20px; }
+  @media (min-width: 880px) { .hero { grid-template-columns: 1fr 1fr; align-items: center; gap: 32px; padding: 56px 0 28px; } }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 16px; padding: 6px 14px 6px 8px; border-radius: 999px; background: var(--card); border: 2px solid var(--outline); color: var(--ink); font-weight: 700; font-size: 13.5px; }
+  .eyebrow svg { width: 18px; height: 22px; }
+  h1 { font-size: clamp(3rem, 8.4vw, 6.4rem); font-stretch: 78%; line-height: .88; letter-spacing: -0.035em; margin: 0 0 18px; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .sub { max-width: 46ch; margin: 0 0 26px; font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--muted); }
+  .cta { display: flex; flex-wrap: wrap; gap: 14px; }
+  .scene { margin: 0; }
+  .scene svg { display: block; width: 100%; height: auto; max-width: 560px; margin: 0 auto; }
+  .scene text { font-family: var(--body); font-weight: 800; }
+  .scene figcaption { margin: 8px 8px 0; text-align: center; color: var(--muted); font-size: 14px; }
+
+  /* at a glance: four stickers */
+  .glance { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 18px 0 8px; }
+  @media (min-width: 720px) { .glance { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; } }
+  .chip { border: 2.5px solid var(--outline); border-radius: 22px; padding: 20px 14px 18px; text-align: center; box-shadow: 4px 4px 0 var(--shadow); color: var(--ink); min-width: 0; }
+  .chip:nth-child(1) { background: var(--tint-pink); transform: rotate(-2deg); }
+  .chip:nth-child(2) { background: var(--tint-cobalt); transform: rotate(1.5deg); }
+  .chip:nth-child(3) { background: var(--tint-mint); transform: rotate(-1deg); }
+  .chip:nth-child(4) { background: var(--tint-lilac); transform: rotate(2deg); }
+  .chip b { display: block; font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1.02; letter-spacing: -0.02em; }
+  .chip span { display: block; margin-top: 6px; font-size: 13.5px; line-height: 1.3; color: var(--muted); }
+  @media (prefers-reduced-motion: reduce) { .chip { transform: none !important; } }
+
+  /* dials */
+  .dials { display: grid; gap: 18px; }
+  @media (min-width: 720px) { .dials { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .dials { grid-template-columns: repeat(4, 1fr); } }
+  .dial { background: var(--card); border: 2.5px solid var(--outline); border-radius: 22px; padding: 22px 22px 20px; box-shadow: 4px 4px 0 var(--shadow); }
+  .dial .n { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: var(--on-accent); border: 2.5px solid var(--outline); font-family: var(--display); font-weight: 800; font-size: 20px; margin-bottom: 12px; }
+  .dial h3 { font-size: 1.4rem; margin-bottom: 8px; }
+  .dial p { color: var(--muted); font-size: 15.5px; margin: 0; }
+  .dial ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+  .dial li { margin: 2px 0; }
+  .ca-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+  .ca-tag { font-family: var(--display); font-weight: 800; font-size: 14px; background: var(--accent); color: var(--on-accent); border: 2px solid var(--outline); border-radius: 8px; padding: 2px 8px; }
+  .ca-row code { font-size: 15px; font-weight: 600; word-break: break-all; background: var(--card); border: 2px solid var(--outline); padding: 6px 10px; border-radius: 10px; }
+  .ca-copy { border: 2px solid var(--outline); background: var(--card); color: inherit; border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+  .loop { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 30px 0 10px; }
+  .loop span { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 7px; border-radius: 999px; background: var(--card); border: 2px solid var(--outline); font-family: var(--display); font-weight: 700; font-size: 14.5px; }
+  .loop span i { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--brand); color: #FFFFFF; font-style: normal; font-size: 12px; font-weight: 800; }
+  .loop em { color: var(--muted); font-style: normal; font-weight: 800; display: none; }
+  @media (min-width: 560px) { .loop em { display: inline; } }
+  .fig { background: var(--card); border: 2.5px solid var(--outline); border-radius: 22px; padding: 18px 14px 10px; margin: 26px 0 0; box-shadow: 4px 4px 0 var(--shadow); }
+  .fig figcaption { color: var(--muted); font-size: 14px; margin: 8px 6px 4px; max-width: 76ch; }
+
+  /* claims */
+  .claims { display: grid; gap: 16px; counter-reset: c; }
+  .claim { background: var(--card); border: 2.5px solid var(--outline); border-radius: 22px; padding: 20px 22px; display: grid; gap: 6px 18px; grid-template-columns: 46px 1fr; box-shadow: 4px 4px 0 var(--shadow); }
+  .claim::before { counter-increment: c; content: counter(c); display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--accent); color: var(--on-accent); border: 2.5px solid var(--outline); font-family: var(--display); font-weight: 800; font-size: 19px; grid-row: span 3; }
+  .claim h3 { font-size: 1.35rem; }
+  .claim p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  .claim .proof { font-size: 14px; }
+  .claim .proof a { font-weight: 700; }
+
+  /* token */
+  .token { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 880px) { .token { grid-template-columns: 0.9fr 1.1fr; gap: 48px; } }
+  .coin { display: grid; place-items: center; }
+  .coin svg { width: min(68%, 290px); height: auto; }
+  .facts { display: grid; gap: 10px; margin: 0 0 22px; padding: 0; list-style: none; }
+  .facts li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; background: var(--card); border: 2px solid var(--outline); border-radius: 16px; font-size: 15.5px; }
+  .facts li svg { flex: none; width: 18px; height: 22px; margin-top: 2px; }
+  .facts b { font-weight: 700; }
+
+  /* proof */
+  section { scroll-margin-top: 64px; }
+  .proof2 { display: grid; gap: 20px; }
+  @media (min-width: 880px) { .proof2 { grid-template-columns: 1fr 1fr; gap: 28px; } }
+  .proofcard { background: var(--card); border: 2.5px solid var(--outline); border-radius: 22px; padding: 22px; box-shadow: 4px 4px 0 var(--shadow); }
+  .proofcard h3 { font-size: 1.35rem; margin-bottom: 4px; }
+  .proofcard .when { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+  .proofcard .cta { margin-top: 16px; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .steps li { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: var(--bg2); font-size: 15px; }
+  .steps li .r { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .steps li i { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--on-accent); border: 2px solid var(--outline); font-style: normal; font-family: var(--display); font-weight: 800; font-size: 12px; align-self: center; }
+  .steps li .sig { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .steps li .amt { font-family: var(--display); font-weight: 800; color: var(--brand-text); }
+  .accounts { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .accounts li { padding: 10px 12px; border-radius: 14px; background: var(--bg2); font-size: 14.5px; }
+  .accounts b { display: block; font-family: var(--display); font-weight: 700; font-size: 15px; }
+  .accounts a { font-family: var(--mono); font-size: 12.5px; word-break: break-all; }
+
+  /* links + footer */
+  .linkrow { display: grid; gap: 16px; }
+  @media (min-width: 720px) { .linkrow { grid-template-columns: repeat(4, 1fr); } }
+  .linkrow a { display: block; padding: 18px; border-radius: 20px; background: var(--card); border: 2.5px solid var(--outline); box-shadow: 4px 4px 0 var(--shadow); text-decoration: none; color: var(--ink); transition: transform .08s ease, box-shadow .08s ease; }
+  .linkrow a:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--shadow); }
+  .linkrow b { display: block; font-family: var(--display); font-weight: 800; font-size: 1.15rem; }
+  .linkrow span { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
+  footer { border-top: 2px solid var(--outline); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+  footer .row { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between; }
+  footer .word { height: 28px; }
+  footer p { max-width: 70ch; margin: 12px 0 0; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .linkrow a { transition: none; } .btn:hover, .linkrow a:hover { transform: none; } }
+
+  /* more dials, fee flow, counters */
+  .more { display: flex; align-items: center; gap: 12px; margin: 38px 0 16px; }
+  .more .knob { width: 46px; height: 46px; flex: none; }
+  .more h3 { font-size: clamp(1.3rem, 2.3vw, 1.7rem); }
+  @media (min-width: 720px) { .dials.six { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .dials.six { grid-template-columns: repeat(3, 1fr); } }
+  .tag { display: inline-block; margin: 0 0 0 8px; vertical-align: 3px; font-family: var(--display); font-weight: 800; font-size: 12.5px; background: var(--accent); color: var(--on-accent); border: 2px solid var(--outline); border-radius: 999px; padding: 2px 9px; white-space: nowrap; transform: rotate(3deg); }
+  .flow { display: grid; grid-template-columns: auto auto auto auto auto; justify-content: center; align-items: center; gap: 12px; padding: 10px 6px 8px; }
+  .flow .pill { display: grid; justify-items: center; gap: 2px; padding: 12px 22px; border-radius: 999px; border: 2.5px solid var(--outline); background: var(--bg2); color: var(--ink); font-family: var(--display); font-weight: 700; font-size: 14px; line-height: 1.1; white-space: nowrap; }
+  .flow .pill b { font-size: 20px; font-weight: 800; }
+  .flow .pill.end { background: var(--accent); color: var(--on-accent); }
+  .flow .arrow { display: inline-flex; width: 34px; color: var(--ink); }
+  .flow .arrow svg { width: 100%; height: auto; display: block; }
+  .flow .takes { display: grid; grid-template-columns: repeat(3, auto); gap: 16px; }
+  .flow .take { display: grid; justify-items: center; gap: 2px; color: var(--ink); }
+  .flow .take svg { width: 66px; height: auto; display: block; }
+  .flow .take text { font-family: var(--display); font-weight: 800; }
+  .flow .take .who { font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--muted); }
+  @media (max-width: 759px) { .flow { grid-template-columns: 1fr; justify-items: center; gap: 8px; } .flow .arrow { transform: rotate(90deg); } }
+  @media (max-width: 359px) { .flow .take svg { width: 54px; } .flow .takes { gap: 10px; } }
+  @media (min-width: 960px) { .flow { gap: 20px; padding: 16px 6px 10px; } .flow .pill { padding: 14px 28px; font-size: 15px; } .flow .pill b { font-size: 24px; } .flow .arrow { width: 46px; } .flow .takes { gap: 26px; } .flow .take svg { width: 84px; } .flow .take .who { font-size: 15px; } }
+  .stats { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); margin: 0 0 12px; }
+  @media (min-width: 720px) { .stats { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+  .stat { background: var(--card); border: 2.5px solid var(--outline); border-radius: 22px; padding: 18px 20px 16px; box-shadow: 4px 4px 0 var(--shadow); }
+  .stat b { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(2.1rem, 3.8vw, 2.9rem); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .stat span { display: block; margin-top: 6px; color: var(--muted); font-size: 14.5px; }
+  .dial .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .dial .top .n { margin-bottom: 0; }
+  .dial .top .tag { margin: 0; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="pip" viewBox="0 0 20 24"><circle cx="10" cy="13" r="7.8" fill="#FF4F9A" stroke="#23102E" stroke-width="2"/><circle cx="10" cy="13" r="4.4" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="1.5"/></symbol>
+    <symbol id="dialicon" viewBox="0 0 100 100"><circle cx="52" cy="52" r="45" fill="var(--shadow)"/><circle cx="48" cy="48" r="45" fill="#FF4F9A" stroke="#23102E" stroke-width="4"/><circle cx="48" cy="48" r="30" fill="#FFF3F8" stroke="#23102E" stroke-width="3.5"/><g stroke="#23102E" stroke-width="3" stroke-linecap="round"><line x1="23.3" y1="72.7" x2="19.4" y2="76.6"/><line x1="15.2" y1="58.6" x2="10.0" y2="60.3"/><line x1="14.3" y1="42.7" x2="8.9" y2="41.8"/><line x1="20.0" y1="27.6" x2="15.5" y2="24.4"/><line x1="32.6" y1="17.2" x2="30.1" y2="12.3"/><line x1="48" y1="13" x2="48" y2="7.5"/><line x1="63.4" y1="17.2" x2="65.9" y2="12.3"/><line x1="76.0" y1="27.6" x2="80.5" y2="24.4"/><line x1="81.7" y1="42.7" x2="87.1" y2="41.8"/><line x1="80.8" y1="58.6" x2="86.0" y2="60.3"/><line x1="72.7" y1="72.7" x2="76.6" y2="76.6"/></g><line x1="48" y1="48" x2="60.5" y2="26" stroke="#3D5CFF" stroke-width="6.5" stroke-linecap="round"/><circle cx="48" cy="48" r="7" fill="#3D5CFF" stroke="#23102E" stroke-width="2.5"/></symbol>
+    <symbol id="pp-plate" viewBox="0 0 100 100"><circle cx="50" cy="50" r="43" fill="var(--pf, #FF4F9A)" stroke="#23102E" stroke-width="5"/><circle cx="50" cy="50" r="30.5" fill="none" stroke="#FFFFFF" stroke-opacity=".45" stroke-width="4"/></symbol>
+    <symbol id="pp-happy" viewBox="0 0 100 100"><ellipse cx="39" cy="44" rx="4.6" ry="6.2" fill="#23102E"/><ellipse cx="61" cy="44" rx="4.6" ry="6.2" fill="#23102E"/><circle cx="40.6" cy="41.4" r="1.6" fill="#FFFFFF"/><circle cx="62.6" cy="41.4" r="1.6" fill="#FFFFFF"/><path d="M38 55 C41 68 59 68 62 55 Z" fill="#23102E" stroke="#23102E" stroke-width="2.5" stroke-linejoin="round"/><ellipse cx="50" cy="62.3" rx="5.4" ry="2.8" fill="#FF7FB5"/><ellipse cx="29.5" cy="54" rx="4.6" ry="2.6" fill="#E0186A" opacity=".3"/><ellipse cx="70.5" cy="54" rx="4.6" ry="2.6" fill="#E0186A" opacity=".3"/></symbol>
+    <symbol id="pp-grin" viewBox="0 0 100 100"><g fill="none" stroke="#23102E" stroke-width="4" stroke-linecap="round"><path d="M33 47 Q39 39.5 45 47"/><path d="M55 47 Q61 39.5 67 47"/></g><path d="M35 54 C38 73 62 73 65 54 Z" fill="#23102E" stroke="#23102E" stroke-width="2.5" stroke-linejoin="round"/><ellipse cx="50" cy="65.5" rx="6.5" ry="3.4" fill="#FF7FB5"/><ellipse cx="28.5" cy="55" rx="4.6" ry="2.6" fill="#E0186A" opacity=".3"/><ellipse cx="71.5" cy="55" rx="4.6" ry="2.6" fill="#E0186A" opacity=".3"/></symbol>
+    <symbol id="pp-wink" viewBox="0 0 100 100"><path d="M34 45 Q39 40 44 45" fill="none" stroke="#23102E" stroke-width="4" stroke-linecap="round"/><ellipse cx="61" cy="44" rx="4.6" ry="6.2" fill="#23102E"/><circle cx="62.6" cy="41.4" r="1.6" fill="#FFFFFF"/><path d="M38 56 Q50 68 62 56" fill="none" stroke="#23102E" stroke-width="4.2" stroke-linecap="round"/><ellipse cx="29.5" cy="54" rx="4.6" ry="2.6" fill="#E0186A" opacity=".3"/><ellipse cx="70.5" cy="54" rx="4.6" ry="2.6" fill="#E0186A" opacity=".3"/></symbol>
+    <symbol id="pp-sleep" viewBox="0 0 100 100"><g fill="none" stroke="var(--pk, #23102E)" stroke-width="3.8" stroke-linecap="round"><path d="M33 46 Q39 51.5 45 46"/><path d="M55 46 Q61 51.5 67 46"/><path d="M45 60 Q50 63.5 55 60"/></g><g fill="none" stroke="var(--pk, #23102E)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M70 14 h9 l-9 10 h9"/><path d="M83 2 h6 l-6 7 h6"/></g></symbol>
+    <symbol id="pp-side" viewBox="0 0 100 100"><ellipse cx="44" cy="46" rx="4.4" ry="4.8" fill="#23102E"/><ellipse cx="66" cy="46" rx="4.4" ry="4.8" fill="#23102E"/><g fill="none" stroke="#23102E" stroke-width="3.8" stroke-linecap="round"><path d="M34 41 H48"/><path d="M56 41 H70"/><path d="M42 61 L58 59"/></g></symbol>
+    <symbol id="pp-wow" viewBox="0 0 100 100"><circle cx="39" cy="44" r="5.6" fill="#23102E"/><circle cx="61" cy="44" r="5.6" fill="#23102E"/><circle cx="41" cy="41.6" r="1.8" fill="#FFFFFF"/><circle cx="63" cy="41.6" r="1.8" fill="#FFFFFF"/><ellipse cx="50" cy="61" rx="5.2" ry="6" fill="#23102E"/><ellipse cx="29.5" cy="54" rx="4.6" ry="2.6" fill="#E0186A" opacity=".3"/><ellipse cx="70.5" cy="54" rx="4.6" ry="2.6" fill="#E0186A" opacity=".3"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="WGMI home"><img class="word word-light" src="logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a>
+    <div class="navr">
+      <button class="toggle" type="button" onclick="var r=document.documentElement;var d=(r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches))?'light':'dark';r.dataset.theme=d;try{localStorage.setItem('wgmi.theme',d)}catch(e){};dispatchEvent(new Event('wgmi-theme'))" aria-label="Switch light and dark">Light / dark</button>
+      <a class="btn primary small" href="https://x.com/wgmiwork" target="_blank" rel="noopener">@wgmiwork</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero" style="padding-top:32px">
+      <div>
+        <p class="eyebrow"><svg><use href="#pip"/></svg> Launchpad on Raydium LaunchLab · Solana</p>
+        <h1>Everyone at the table <em>eats.</em></h1>
+        <p class="sub">Launch on Solana with your own rules. The dev decides who gets paid and in what. <b>0% platform fee</b>. The house eats last.</p>
+        <p class="sub">The table opens soon.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://x.com/wgmiwork" target="_blank" rel="noopener">Follow @wgmiwork</a>
+        </div>
+      </div>
+      <figure class="scene" style="margin:0">
+        <svg viewBox="0 0 520 470" role="img" aria-label="Plates with faces around a round table: holders, the dev, the treasury, burn and traders, and the house asleep at an empty plate marked 0%">
+          <circle cx="260" cy="225" r="104" fill="var(--ink)"/>
+          <circle cx="260" cy="225" r="88" fill="none" stroke="var(--bg)" stroke-opacity=".3" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+          <text x="260" y="220" text-anchor="middle" font-size="34" fill="var(--bg)" style="font-family:var(--display);letter-spacing:-1px">your</text>
+          <text x="260" y="254" text-anchor="middle" font-size="34" fill="var(--bg)" style="font-family:var(--display);letter-spacing:-1px">recipe</text>
+          <svg x="214" y="14" width="92" height="92" viewBox="0 0 100 100" style="--pf:#FF4F9A"><use href="#pp-plate"/><use href="#pp-grin"/></svg>
+          <svg x="356.9" y="96.5" width="92" height="92" viewBox="0 0 100 100" style="--pf:#3D5CFF"><use href="#pp-plate"/><use href="#pp-wink"/></svg>
+          <svg x="356.9" y="261.5" width="92" height="92" viewBox="0 0 100 100" style="--pf:#22CFA0"><use href="#pp-plate"/><use href="#pp-happy"/></svg>
+          <svg x="71.1" y="261.5" width="92" height="92" viewBox="0 0 100 100" style="--pf:#B79BFF"><use href="#pp-plate"/><use href="#pp-side"/></svg>
+          <svg x="71.1" y="96.5" width="92" height="92" viewBox="0 0 100 100" style="--pf:#7CD4FF"><use href="#pp-plate"/><use href="#pp-wow"/></svg>
+          <circle cx="260" cy="390" r="39" fill="var(--card)" stroke="var(--ink)" stroke-width="4" stroke-dasharray="9 7"/>
+          <svg x="214" y="344" width="92" height="92" viewBox="0 0 100 100" style="--pk:var(--ink)"><use href="#pp-sleep"/></svg>
+          <g font-size="15" fill="var(--ink)" text-anchor="middle">
+            <rect x="312" y="47" width="86" height="26" rx="13" fill="var(--card)" stroke="var(--outline)" stroke-width="2"/><text x="355" y="65">holders</text>
+            <rect x="375" y="192" width="56" height="26" rx="13" fill="var(--card)" stroke="var(--outline)" stroke-width="2"/><text x="403" y="210">dev</text>
+            <rect x="355" y="358" width="96" height="26" rx="13" fill="var(--card)" stroke="var(--outline)" stroke-width="2"/><text x="403" y="376">treasury</text>
+            <rect x="87" y="358" width="60" height="26" rx="13" fill="var(--card)" stroke="var(--outline)" stroke-width="2"/><text x="117" y="376">burn</text>
+            <rect x="75" y="192" width="84" height="26" rx="13" fill="var(--card)" stroke="var(--outline)" stroke-width="2"/><text x="117" y="210">traders</text>
+            <rect x="190" y="440" width="140" height="26" rx="13" fill="#FF4F9A" stroke="var(--outline)" stroke-width="2"/><text x="260" y="458" fill="#23102E">the house · 0%</text>
+          </g>
+        </svg>
+      </figure>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <a class="brand" href="/" aria-label="WGMI"><img class="word word-light" src="logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a>
+      <span>wgmi.work · a launchpad on Raydium LaunchLab, Solana · <a href="https://x.com/wgmiwork" target="_blank" rel="noopener">@wgmiwork</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
