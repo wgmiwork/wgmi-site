@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><script>try{var t=localStorage.getItem("wgmi.theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WGMI · docs</title>
+<link rel="icon" type="image/png" sizes="16x16" href="/logo/wgmi-tab-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/logo/wgmi-tab-32.png"><link rel="icon" type="image/png" sizes="48x48" href="/logo/wgmi-tab-48.png"><link rel="icon" type="image/png" sizes="512x512" href="/logo/wgmi-tab-512.png"><link rel="apple-touch-icon" href="/logo/wgmi-tab-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF3F8;--bg2:#FFE4F0;--card:#fff;--ink:#23102E;--muted:#6E5877;--line:#EBCFDE;--accent:#FF4F9A;--on-accent:#23102E;--brand:#2F49E0;--outline:#23102E;--shadow:#23102E;--display:"Bricolage Grotesque","Arial Black",sans-serif;--body:Figtree,"Helvetica Neue",Arial,sans-serif}
+:root[data-theme=dark]{color-scheme:dark;--bg:#170B21;--bg2:#331A47;--card:#24112F;--ink:#FFF3F8;--muted:#C2ABCB;--line:#3E2350;--accent:#FF5FA5;--brand:#9AAAFF;--outline:#F3D3E4;--shadow:#FF4F9A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#170B21;--bg2:#331A47;--card:#24112F;--ink:#FFF3F8;--muted:#C2ABCB;--line:#3E2350;--accent:#FF5FA5;--brand:#9AAAFF;--outline:#F3D3E4;--shadow:#FF4F9A}}
+.toggle{margin-left:auto;background:var(--card);border:2px solid var(--outline);border-radius:999px;padding:5px 11px;font:inherit;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body)}
+main{max-width:820px;margin:0 auto;padding:28px 16px 80px;overflow-wrap:break-word}h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:34px 0 10px;text-wrap:balance}h1{font-size:46px;font-stretch:84%;margin-top:22px}h2{font-size:29px;font-stretch:90%}h3{font-size:19px}
+a{color:var(--brand)}.nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-weight:700;padding-bottom:14px;border-bottom:2px solid var(--outline)}.nav a{color:var(--ink);text-decoration:none}.nav a:hover{color:var(--accent)}.nav img{height:32px;width:auto;display:block}.nav img.word-dark{display:none}:root[data-theme=dark] .nav img.word-light{display:none}:root[data-theme=dark] .nav img.word-dark{display:block}@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .nav img.word-light{display:none}:root:not([data-theme=light]) .nav img.word-dark{display:block}}
+.card{background:var(--card);border:2.5px solid var(--outline);border-radius:18px;padding:16px 18px;margin:14px 0;box-shadow:4px 4px 0 var(--shadow)}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}th{font-family:var(--display);font-weight:800}
+code{font-family:"IBM Plex Mono",Menlo,monospace;font-size:13.5px;background:var(--bg2);padding:1px 5px;border-radius:5px;word-break:break-all}.muted{color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font-family:var(--display);font-weight:800;padding:10px 18px;border-radius:999px;border:2.5px solid var(--outline);box-shadow:3px 3px 0 var(--shadow);text-decoration:none}
+ol,ul{padding-left:22px}li{margin:4px 0}
+</style>
+</head>
+<body><main>
+<div class="nav"><a href="/"><img class="word word-light" src="/logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="/logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a><a href="/">Home</a><a href="/app/">Launch a token</a><a href="/app/#/tokens">Tokens</a><button class="toggle" type="button" onclick="var r=document.documentElement;var d=(r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches))?'light':'dark';r.dataset.theme=d;try{localStorage.setItem('wgmi.theme',d)}catch(e){};dispatchEvent(new Event('wgmi-theme'))" aria-label="Switch light and dark">Light / dark</button></div>
+<h1>How WGMI works</h1>
+<p>WGMI is a launchpad on Raydium LaunchLab (Solana). The dev launching a token sets three dials that other launchpads hard-code: the transfer tax, what the tax buys, and the rule that pays holders. An engine runs the payouts every epoch and publishes every step. Everything on this page is what the program and the engine actually do; the verified claims with proof links are on the <a href="/#claims">home page</a>.</p>
+
+<h2>Launching</h2>
+<div class="card"><ol>
+<li><b>Token.</b> Name, ticker, description, image and links. The image and metadata are uploaded through the WGMI API and the URI goes into the token's metadata.</li>
+<li><b>Curve.</b> Pick the platform account, which sets the creator curve fee you earn on every curve trade: 0.5%, 0.25% or 0. Quote asset: any of the 600+ mints with a LaunchLab config, searchable in the form (SOL, USDC, gold as GLDx, tokenized stocks, staked SOL, STONK and more); buyers can pay in SOL for any of them, Jupiter routes the swap. Raise target on a slider: from the pair's floor (Raydium's on-chain minimum where one exists, 24 SOL on the SOL pair; the worth of 1 SOL elsewhere) up to the worth of 170 SOL, with the worth of 85 SOL, Raydium's own default, marked; any number can be typed instead. The form shows the start and graduation market caps and the dev buy's share of the supply for the target chosen, and warns what a low curve does. Optional dev buy inside the creation transaction (paid in SOL, swapped to the quote first if needed); the form shows what share of the supply it ends up as, after the curve fee and the tax, and works out the amount for a share you name.</li>
+<li><b>Tax and payouts.</b> Tax 0 to 5% (a Token-2022 transfer fee; the program locks the rate on the curve and the platform never changes it after; $WGMI, the platform's own token, is the one exception: its rate may change after its graduation), the payout epoch (1, 3, 6, 12 or 24 hours), and up to ten sinks with shares that add up to 100%. Then the dials of your choice (all off by default): a buy-tax refund, a second recipe that takes over later, a minimum holding age per sink, a jackpot draw, a locked team share, and a referral share on curve trades. See <a href="#dials">Dials</a>.</li>
+<li><b>Sign.</b> Your wallet first signs the payout manifest as a message (no transaction, no fee), then approves one or two transactions that create the token; the launch approval is the last step. The form hands the signed manifest to the engine as soon as the token is live; the engine checks the signature and the pool on-chain and runs the first epoch within the hour.</li>
+</ol><p><a class="btn" href="/app/">Open the launch form</a></p></div>
+
+<h2>What the engine does every epoch</h2>
+<div class="card"><ol>
+<li><b>Sweep.</b> Harvest the withheld tax from token accounts (permissionless) and withdraw it from the mint (the operator key is the withdraw authority).</li>
+<li><b>Refund</b> (tokens with a buy-tax refund): read the curve's and the pool's own transactions since the last epoch, find every buy, and send each buyer back the tax they paid, grossed up so it arrives whole; in <i>holders</i> mode only to buyers still holding everything they bought in that window at the snapshot. Off the top, before the split; every refund is in the ledger with the buy it answers.</li>
+<li><b>Split</b> the withdrawn tax across the token's sinks by their shares, under the recipe stage the token is in (checked first: at graduation, a holder count or a market cap, in order, never back).</li>
+<li><b>Convert.</b> Where sinks pay in another asset, swap through Jupiter, once per asset; conversions happen first so the token's own tax is paid once, not twice. A token still on its curve that Jupiter no longer routes is sold on its own curve, then converted as usual; a payout asset launched on WGMI that Jupiter no longer routes, such as $WGMI, is bought on its own curve the same way. A pot worth less than 0.002 SOL is not swapped: it waits and joins the next epoch's pot.</li>
+<li><b>Snapshot</b> every holder (Helius DAS), excluding treasury wallets, the operator and program vaults, plus any wallets the dev listed.</li>
+<li><b>Apply the rule</b> and pay: native SOL by transfer, tokens by transfer into the holder's token account. Payouts too small to deliver (a wallet below the rent minimum, or a first payout under $1 that would need a new token account) go pro-rata to the holders paid that epoch; if nobody can be paid, the pot rolls into the next epoch. Minimum holding is a dollar amount fixed by the dev, $2 or more, priced at snapshot time. </li>
+<li><b>Publish</b> the ledger: the snapshot every rule ran on (balances, epochs held, sold-or-not), allocations, amounts, the lottery seed and every transaction signature. Each token page recomputes past epochs from their snapshots and shows the result.</li>
+</ol></div>
+
+<h2>Sinks</h2>
+<div class="card"><table><tr><th>Sink</th><th>What it does</th></tr>
+<tr><td>Reflections</td><td>Converts its share to the payout asset (the quote asset, any Jupiter-routable asset, or the token itself with no swap) and pays holders under the rule.</td></tr>
+<tr><td>Treasury</td><td>Sends its share to a wallet the dev names: converted to the quote asset (default), converted to any Jupiter-routable asset (gold, USDC, a community's token), or as the token itself.</td></tr>
+<tr><td>Creator</td><td>Same, to the dev's wallet.</td></tr>
+<tr><td>Burn</td><td>Burns its share outright (the tax is collected in the token itself, so no buyback is needed: supply shrinks by exactly that amount, with no swap and no slippage), or buys another token with it and burns that: a buyback-and-burn of a community's token, paid for by the tax.</td></tr></table>
+<p class="muted">Treasury wallets never receive reflections, so a treasury cannot farm its own tax; the creator wallet is an ordinary holder.</p></div>
+
+<h2 id="rules">Rules</h2>
+<div class="card"><table><tr><th>Rule</th><th>Who gets what</th></tr>
+<tr><td>Pro-rata</td><td>Every eligible wallet in proportion to its balance.</td></tr>
+<tr><td>Holding-time weighted</td><td>Every eligible wallet is paid by balance × a multiplier, so tokens earn a bigger share the longer their wallet holds. This rule replaces pro-rata; it is not added on top. The dev sets three dials: the holding interval (6, 12 or 24 hours, its own clock, separate from the payout epoch), the multiplier added per interval (+0.01× to +1×) and the cap (up to 10×). Every token starts at 1×. Selling anything sends the wallet back to 1×. Tokens bought later start at 1× and age on their own clock, so an old wallet earns nothing extra on a fresh buy.</td></tr>
+<tr><td>Never-sold bonus</td><td>Only wallets that never sold are paid, by balance. In an epoch where no wallet qualifies, all eligible wallets are paid by balance.</td></tr>
+<tr><td>Balance-weighted lottery</td><td>N equal prizes each epoch, each drawn by balance weight, so one wallet can win more than one; on average every wallet wins its share of the balance, however it is split. The seed is the hash of a Solana block produced after the snapshot, so nobody can know the winners before the snapshot; the seed and the snapshot are published, and anyone can recompute the draw.</td></tr>
+<tr><td>Minimum holding</td><td>Any rule can require a minimum balance; wallets under it are not paid.</td></tr>
+<tr><td>Minimum holding age</td><td>Any rule can require tokens to have sat in the wallet for a set time (1 hour to 7 days) before they count, per lot: a top-up starts its own clock, splitting wallets gains nothing, and a wallet that sells inside the wait is paid nothing on those tokens while its tax stays in the pot. Snipers who flip feed the holders.</td></tr>
+<tr><td>Jackpot</td><td>A lottery sink can draw every N epochs instead of every epoch (up to a week): between draws its share of the tax piles up with the sink, in the token, and is converted and drawn in one go at the drawing epoch. The token page shows the pot and the countdown.</td></tr></table>
+<p>Each sink follows one rule. To pay holders in more than one way, add a sink for each way: a holder is paid from every sink they qualify for.</p>
+<p><b>Refused on purpose:</b> small-holder boosts, flat amounts per wallet, "under X% only" tiers, and rewards for recent buyers. The first three reward splitting one wallet into many; the last rewards wash trading. The rules above are unit-tested against a single invariant: splitting a wallet never raises its payout.</p></div>
+
+<h2 id="dials">Dials</h2>
+<div class="card"><table><tr><th>Dial</th><th>What it does</th></tr>
+<tr><td>Buy-tax refund</td><td>The tax is a Token-2022 transfer fee and the program charges it on every transfer, buys included; nothing on Solana can tax sells only (Raydium's pools refuse transfer hooks). With the refund on, the engine pays the buy side back every epoch, from the pool's own transactions: buying is tax-free, selling and wallet moves pay. <i>Holders</i> mode refunds only buyers who still hold everything they bought in the window at the snapshot (sell any of it first and the tax stays in the pot); <i>all</i> mode refunds every buyer.</td></tr>
+<tr><td>Later recipe</td><td>A second split that takes over at graduation, once a number of wallets hold the token (counted on the last snapshot), or once the market cap (price × supply) reaches a dollar amount. Signed with the launch, checked at the start of every epoch, entered in order and never left; every epoch record says which recipe it ran under and what the check saw.</td></tr>
+<tr><td>Locked team share</td><td>A slice of the supply locked for the creator by Raydium's program at launch: it never enters the curve, sits in the pool's vault, and unlocks after graduation with a cliff and then evenly over a period the dev sets. It comes out of the pool's 20.69%, capped by the pair's config (5.68% on the SOL pair), so the curve and the form's numbers are unchanged. The dev chooses whether the locked tokens count as held for payouts. After graduation the creator sets up the claim and claims from the token page.</td></tr>
+<tr><td>Referral share</td><td>Up to 1% of every curve trade, set by the dev, paid by Raydium's program to whoever brought the buyer: a trade made through the token page with a referrer in the link pays them the share with the trade, on top of the curve fee; without a referrer nothing is charged. Every visitor of the token page gets a Share-and-earn link. Curve only: after graduation trading moves to the pool and the share ends.</td></tr></table></div>
+
+<h2 id="fees">Fees</h2>
+<div class="card"><p>On the curve: Raydium's 0.25% plus the creator fee of the account you launched on (0.5%, 0.25% or 0). The platform's curve fee is 0. After graduation the pool runs on tier 9: 1.00% per swap, of which 0.42 is forwarded to the dev (claimed and sent once a day, as soon as the dev's share is worth $1; until then it keeps accruing in the pool) and the rest stays with the platform. Since 2026-10-01 Raydium's program keeps 5% of the creator slice at the claim; the dev's 0.42 is fixed and the platform absorbs that cut (the rates are recorded with every claim); half of the pool's LP is locked and half burned. The tax is separate from all of this: it applies to every transfer of the token, on the curve and in the pool.</p></div>
+
+<h2>The ledger and the API</h2>
+<div class="card"><p>Every registered token has a page at <code>wgmi.work/app/#/t/&lt;mint&gt;</code>. The same data is public JSON:</p>
+<ul><li><code>https://api.wgmi.work/tokens</code> all registered tokens with epoch counts</li>
+<li><code>https://api.wgmi.work/tokens/&lt;mint&gt;</code> a token's rules, the tax waiting in the mint, and every epoch's results</li>
+<li><code>https://api.wgmi.work/ledger/&lt;mint&gt;/&lt;epoch&gt;</code> the full record of one epoch, recipients and signatures included</li></ul>
+
+</div>
+
+<h2>Addresses</h2>
+<div class="card"><table>
+
+<tr><td>Operator (tax withdraw authority, engine signer)</td><td><code>8rSamL2V8c45yJiBkLhYSNY3Sifq27hBfHXpkbL2PpTW</code></td></tr>
+<tr><td>Platform fee wallet</td><td><code>Ae17LDrdCVvPyU8jdJu3ZTPihU2qxVMW7NPWE3VNkide</code></td></tr></table></div>
+
+<h2>What we do not claim</h2>
+<div class="card"><ul>
+<li>Not trustless: the engine is an operator-run service. The snapshot, the rule and the sends are off-chain code with a published ledger.</li>
+<li>Not free of fees: Raydium's 0.25% on the curve and the pool tier's fee remain.</li>
+<li>Not audited. Nothing is guaranteed; a token's tax can only be withdrawn, converted and paid as described, and every epoch can be checked against the ledger.</li></ul></div>
+<p class="muted">wgmi.work · a launchpad on Raydium LaunchLab, Solana</p>
+</main></body></html>

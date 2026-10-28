@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <script>try{var t=localStorage.getItem("wgmi.theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WGMI · Everyone at the table eats</title>
-<meta name="description" content="WGMI: a launchpad on Raydium LaunchLab, Solana, where everyone at the table eats. The dev sets the dials; 0% platform fee.">
+<title>WGMI · Launch with your rules</title>
+<meta name="description" content="WGMI: a launchpad on Raydium LaunchLab (Solana). 0% platform fee, the cheapest a LaunchLab curve can be, 600+ pairs, any payout asset, and ten dials the dev sets.">
 <meta name="theme-color" content="#3D5CFF">
 <link rel="canonical" href="https://wgmi.work/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wgmi.work/">
-<meta property="og:title" content="WGMI · Everyone at the table eats">
-<meta property="og:description" content="WGMI: a launchpad on Raydium LaunchLab, Solana, where everyone at the table eats. The dev sets the dials; 0% platform fee.">
+<meta property="og:title" content="WGMI · the house takes almost nothing and everyone at the table eats">
+<meta property="og:description" content="0% platform fee: the cheapest a LaunchLab curve can be. 600+ pairs, any payout asset, ten dials the dev sets.">
 <meta property="og:image" content="https://wgmi.work/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="WGMI · Everyone at the table eats">
-<meta name="twitter:description" content="WGMI: a launchpad on Raydium LaunchLab, Solana, where everyone at the table eats. The dev sets the dials; 0% platform fee.">
+<meta name="twitter:title" content="WGMI · the house takes almost nothing and everyone at the table eats">
+<meta name="twitter:description" content="0% platform fee: the cheapest a LaunchLab curve can be. 600+ pairs, any payout asset, ten dials the dev sets.">
 <meta name="twitter:image" content="https://wgmi.work/og.png">
 <link rel="icon" type="image/png" sizes="16x16" href="logo/wgmi-tab-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="logo/wgmi-tab-32.png">
@@ -243,10 +243,11 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="/" aria-label="WGMI home"><img class="word word-light" src="logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a>
+    <a class="brand" href="#top" aria-label="WGMI home"><img class="word word-light" src="logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a>
+    <nav class="links" aria-label="Sections"><a href="#how">How it works</a><a href="#claims">Why WGMI</a><a href="#proof">Proof</a><a href="/app/#/tokens">Tokens</a><a href="/docs/">Docs</a></nav>
     <div class="navr">
       <button class="toggle" type="button" onclick="var r=document.documentElement;var d=(r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches))?'light':'dark';r.dataset.theme=d;try{localStorage.setItem('wgmi.theme',d)}catch(e){};dispatchEvent(new Event('wgmi-theme'))" aria-label="Switch light and dark">Light / dark</button>
-      <a class="btn primary small" href="https://x.com/wgmiwork" target="_blank" rel="noopener">@wgmiwork</a>
+      <a class="btn primary small" href="/app/">Launch a token</a>
     </div>
   </div>
 </header>
@@ -257,10 +258,10 @@
       <div>
         <p class="eyebrow"><svg><use href="#pip"/></svg> Launchpad on Raydium LaunchLab · Solana</p>
         <h1>Everyone at the table <em>eats.</em></h1>
-        <p class="sub">Launch on Solana with your own rules. The dev decides who gets paid and in what. <b>0% platform fee</b>. The house eats last.</p>
-        <p class="sub">The table opens soon.</p>
+        <p class="sub">Launch on Solana with your own rules. <b>Ten dials</b> the dev sets, <b>600+ pairs</b>, any payout asset, <b>0% platform fee</b>. The house eats last.</p>
         <div class="cta">
-          <a class="btn primary" href="https://x.com/wgmiwork" target="_blank" rel="noopener">Follow @wgmiwork</a>
+          <a class="btn primary" href="/app/" id="launch">Launch a token</a>
+          <a class="btn secondary" href="#how">See the dials</a>
         </div>
       </div>
       <figure class="scene" style="margin:0">
@@ -285,7 +286,162 @@
             <rect x="190" y="440" width="140" height="26" rx="13" fill="#FF4F9A" stroke="var(--outline)" stroke-width="2"/><text x="260" y="458" fill="#23102E">the house · 0%</text>
           </g>
         </svg>
+        <figcaption>Launch against any of 600+ assets. Pay holders in anything Jupiter routes. The dev decides.</figcaption>
       </figure>
+    </section>
+
+    <section class="glance" aria-label="At a glance">
+      <div class="chip"><b>0% platform fee</b><span>0.75% all-in on the curve: the cheapest a LaunchLab curve can be.</span></div>
+      <div class="chip"><b>600+ pairs</b><span>SOL, USDC, gold, stocks, memes. Buyers can pay in SOL for any of them.</span></div>
+      <div class="chip"><b>Any payout asset</b><span>holders paid in whatever Jupiter routes, by the rule you pick.</span></div>
+      <div class="chip"><b>Ten dials</b><span>the pair, the tax, what it buys, who gets paid, and six more.</span></div>
+    </section>
+
+    <section id="how">
+      <p class="kicker"><svg><use href="#pip"/></svg> How it works</p>
+      <h2>Ten dials the dev sets. Every one of them yours.</h2>
+      <p class="lede">Pick the pair, the tax, what it buys and who gets paid by which rule. Then any of six more. Signed at launch, run by the engine every epoch, published as a ledger.</p>
+      <div class="dials">
+        <article class="dial">
+          <span class="n">1</span>
+          <h3>The pair</h3>
+          <p>Any of 600+ quote assets: SOL, USDC, gold, tokenized stocks, staked SOL, memes. Buyers can pay in SOL for any of them; Jupiter routes the swap.</p>
+        </article>
+        <article class="dial">
+          <span class="n">2</span>
+          <h3>The tax</h3>
+          <p>0 to 5% on every transfer, in steps of 0.01%. Your number: the program locks it on the curve, and the platform never changes it after. The one token whose rate may change after graduation is $WGMI itself.</p>
+        </article>
+        <article class="dial">
+          <span class="n">3</span>
+          <h3>What it buys</h3>
+          <p>Anything Jupiter routes, picked by name: gold, staked SOL, BTC, a stock, the quote, or the token itself. Or burn it. Or fund the treasury. Any split, up to ten sinks.</p>
+        </article>
+        <article class="dial">
+          <span class="n">4</span>
+          <h3>Who gets paid, by which rule</h3>
+          <p>Pro-rata, holding-time weighted, never-sold bonus or a balance-weighted lottery, each with an optional minimum holding. Splitting a wallet never raises its payout.</p>
+        </article>
+      </div>
+      <div class="more"><svg class="knob" aria-hidden="true"><use href="#dialicon"/></svg><h3>Six more. Off by default, yours at launch.</h3></div>
+      <div class="dials six">
+        <article class="dial">
+          <div class="top"><span class="n">5</span></div>
+          <h3>Buy-tax refund</h3>
+          <p>Buyers get their tax back at the next epoch, grossed up so it arrives whole. Only sells pay.</p>
+        </article>
+        <article class="dial">
+          <span class="n">6</span>
+          <h3>Later recipe</h3>
+          <p>A second split takes over at graduation, at a holder count or at a market cap. Signed before launch, checked every epoch, never reversed.</p>
+        </article>
+        <article class="dial">
+          <span class="n">7</span>
+          <h3>Minimum holding age</h3>
+          <p>Tokens count only after 1 hour to 7 days in the wallet, per lot. A sniper who flips inside the wait feeds the pot.</p>
+        </article>
+        <article class="dial">
+          <span class="n">8</span>
+          <h3>Jackpot</h3>
+          <p>A lottery that draws every N epochs. Between draws the pot piles up, with a countdown on the token page.</p>
+        </article>
+        <article class="dial">
+          <span class="n">9</span>
+          <h3>Locked team share</h3>
+          <p>A slice locked by Raydium's program at launch, with a cliff and a linear unlock after graduation. You decide whether it earns payouts.</p>
+        </article>
+        <article class="dial">
+          <span class="n">10</span>
+          <h3>Referral share</h3>
+          <p>Up to 1% of every curve trade to whoever brought the buyer, paid by the program. Every visitor of the token page gets a share-and-earn link.</p>
+        </article>
+      </div>
+      <div class="loop" aria-label="What the engine does every epoch">
+        <span><i>1</i> sweep the tax</span><em>→</em><span><i>2</i> refund the buys</span><em>→</em><span><i>3</i> convert it</span><em>→</em><span><i>4</i> snapshot holders</span><em>→</em><span><i>5</i> apply the rule</span><em>→</em><span><i>6</i> pay</span><em>→</em><span><i>7</i> publish the ledger</span>
+      </div>
+      <p class="muted" style="font-size:15px;max-width:70ch">Every epoch, hourly if you like. Payouts too small to deliver go to the other holders paid that epoch; a pot too small to convert waits for the next. Nothing is rounded away.</p>
+
+      <figure class="fig" style="margin-bottom:0">
+        <div class="flow" role="img" aria-label="A buy of 100 on the curve: 0.25 to Raydium, 0.50 to the dev, 0 to the platform, 99.25 into the curve">
+          <div class="pill start"><span>A buy of</span><b>100</b></div>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 40 24"><path d="M3 12 H34 M26 4 L36 12 L26 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="takes">
+            <div class="take"><svg viewBox="0 0 72 88" aria-hidden="true"><svg x="2" y="14" width="68" height="68" viewBox="0 0 100 100" style="--pf:#7CD4FF"><use href="#pp-plate"/></svg><text x="36" y="55" text-anchor="middle" font-size="19" fill="#23102E">0.25</text></svg><span class="who">Raydium</span></div>
+            <div class="take"><svg viewBox="0 0 72 88" aria-hidden="true"><svg x="2" y="14" width="68" height="68" viewBox="0 0 100 100" style="--pf:#3D5CFF"><use href="#pp-plate"/></svg><text x="36" y="55" text-anchor="middle" font-size="19" fill="#FFFFFF">0.50</text></svg><span class="who">Dev</span></div>
+            <div class="take"><svg viewBox="0 0 72 88" aria-hidden="true"><text x="36" y="14" text-anchor="middle" font-size="18" fill="currentColor">0</text><circle cx="36" cy="54" r="28" fill="var(--card)" stroke="currentColor" stroke-width="2.6" stroke-dasharray="6 5"/><svg x="6" y="24" width="60" height="60" viewBox="0 0 100 100" style="--pk:currentColor"><use href="#pp-sleep"/></svg></svg><span class="who">Platform</span></div>
+          </div>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 40 24"><path d="M3 12 H34 M26 4 L36 12 L26 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="pill end"><span>Into the curve</span><b>99.25</b></div>
+        </div>
+        <figcaption>Per 100 traded on the curve with the 0.5% creator account; fees come off the quote side, on a sell off the proceeds. 0.75% all-in on the WGMI account, 0.50% on WGMI 0.25, 0.25% on WGMI 0. Only Raydium's own 0.25% remains. After graduation the pool charges 1.00% per swap, 0.42 of it forwarded to the dev and published per token, and half of the pool's liquidity fees deepen the pool forever.</figcaption>
+      </figure>
+    </section>
+
+    <section id="claims">
+      <p class="kicker"><svg><use href="#pip"/></svg> Why launch here</p>
+      <h2>Six reasons, all of them on-chain.</h2>
+      <p class="lede">The cheapest a LaunchLab curve can be, and every option in the dev's hands. Each one is readable on-chain or in Raydium's docs.</p>
+      <div class="claims">
+        <article class="claim">
+          <h3>The cheapest a LaunchLab curve can be.</h3>
+          <p>0.75% all-in on the WGMI account. The platform takes 0%; only Raydium's 0.25% and the dev's own fee remain. Two more accounts bring it to 0.50% or 0.25%.</p>
+        </article>
+        <article class="claim">
+          <h3>Your fees stay yours.</h3>
+          <p>The 0.5% creator fee accrues to the dev's own on-chain vault, and only they can claim it. After graduation, 0.42 of every pool swap's 1.00% is forwarded to the dev.</p>
+        </article>
+        <article class="claim">
+          <h3>Any pair, any payout asset.</h3>
+          <p>600+ quote assets and any payout token Jupiter routes, both by name in the form. Tax 0 to 5%. Up to ten sinks: holders, treasury, creator, burn, in any split. Set once, run every epoch.</p>
+        </article>
+        <article class="claim">
+          <h3>Rules that cannot be gamed.</h3>
+          <p>Pro-rata, holding-time weighted, never-sold bonus or a balance-weighted lottery, each with a minimum holding and a minimum holding age. Splitting a wallet never raises its payout; rules that reward wash trading are refused.</p>
+        </article>
+        <article class="claim">
+          <h3>Buys tax-free, sells pay.</h3>
+          <p>The buy tax refunded within the hour, and a recipe that changes on a signed schedule.</p>
+        </article>
+        <article class="claim">
+          <h3>The pool deepens with every trade.</h3>
+          <p>At graduation half of the LP is burned and half locked, so half of every swap's liquidity fee stays in the pool forever. Nobody can pull it.</p>
+        </article>
+      </div>
+      <p class="muted" style="margin:14px 0 0;padding:16px 22px;border:2px dashed var(--line);border-radius:24px;font-size:15px">Also true: the mint authority is revoked at creation, and every payout epoch is published as a ledger with its snapshot, allocations and transaction signatures, so anyone can recompute it.</p>
+    </section>
+
+    <section id="proof">
+      <p class="kicker"><svg><use href="#pip"/></svg> Proof</p>
+      <h2>Live on mainnet, in the open.</h2>
+      <p class="lede">Every token launched here has a page with its curve, its holders and every payout epoch, down to the transaction signatures.</p>
+      <div class="stats" aria-label="Counted by the engine">
+        <div class="stat"><b data-stat="tokens">—</b><span>tokens launched</span></div>
+        <div class="stat"><b data-stat="creators">—</b><span>creator wallets</span></div>
+        <div class="stat"><b data-stat="epochs">—</b><span>epochs published</span></div>
+        <div class="stat"><b data-stat="quotes">593</b><span>pairs on the menu</span></div>
+      </div>
+      <p class="muted" style="font-size:14px;margin:0 0 22px" data-stat-when>Counted by the engine.</p>
+      <div class="proof2">
+        <article class="proofcard">
+          <h3>Every launch is public</h3>
+          <p class="when">Curve, holders and every payout epoch, with its transaction signatures, on each token's page.</p>
+          <p class="cta"><a class="btn secondary" href="/app/tokens/">All tokens</a><a class="btn secondary" href="/app/communities/">Find your token's page</a></p>
+        </article>
+
+      </div>
+    </section>
+
+
+
+    <section id="links">
+      <p class="kicker"><svg><use href="#pip"/></svg> Links</p>
+      <h2>Where to find us.</h2>
+      <div class="linkrow">
+        <a href="https://x.com/wgmiwork" rel="noopener" target="_blank"><b>X</b><span>@wgmiwork</span></a>
+        <a href="/docs/"><b>Docs</b><span>fee anatomy, rules, dials, the ledger format</span></a>
+        
+        
+      </div>
     </section>
   </div>
 </main>
@@ -293,10 +449,35 @@
 <footer>
   <div class="wrap">
     <div class="row">
-      <a class="brand" href="/" aria-label="WGMI"><img class="word word-light" src="logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a>
-      <span>wgmi.work · a launchpad on Raydium LaunchLab, Solana · <a href="https://x.com/wgmiwork" target="_blank" rel="noopener">@wgmiwork</a></span>
+      <a class="brand" href="#top" aria-label="WGMI"><img class="word word-light" src="logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a>
+      <span>wgmi.work · a launchpad on Raydium LaunchLab, Solana</span>
     </div>
+    <p>The engine is an operator-run service: the snapshot, the rule and the sends are off-chain code, and every epoch is published as a ledger with its transaction signatures. Raydium's 0.25% on the curve and the pool tier's liquidity fee remain on every trade.</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  // Section links scroll without writing "#how" and friends into the address bar; a link that arrives with one still lands on its section.
+  var strip=function(){ if(location.hash) history.replaceState(null,'',location.pathname+location.search); };
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href').slice(1); var el=id==='top'?document.body:document.getElementById(id); if(!el) return;
+    e.preventDefault();
+    if(id==='top') window.scrollTo({top:0,behavior:'smooth'}); else el.scrollIntoView({behavior:'smooth',block:'start'});
+    strip();
+  });
+  var go=function(instant){ var id=location.hash.slice(1); var t=id&&document.getElementById(id); if(t) t.scrollIntoView({block:'start',behavior:instant?'auto':'smooth'}); strip(); };
+  if(location.hash) setTimeout(function(){ go(true); },0);
+  addEventListener('hashchange',function(){ go(true); });
+  // Live counters from the engine; the numbers in the page are the fallback.
+  fetch('https://api.wgmi.work/stats').then(function(r){ return r.ok?r.json():null; }).then(function(s){
+    if(!s) return;
+    var f=function(n){ return Number(n).toLocaleString('en-US'); };
+    ['tokens','creators','epochs','quotes'].forEach(function(k){ var el=document.querySelector('[data-stat="'+k+'"]'); if(el&&s[k]!=null) el.textContent=f(s[k]); });
+    var w=document.querySelector('[data-stat-when]'); if(w) w.textContent='Counted by the engine, refreshed every few minutes.';
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
