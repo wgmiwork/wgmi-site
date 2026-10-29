@@ -244,7 +244,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="WGMI home"><img class="word word-light" src="logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a>
-    <nav class="links" aria-label="Sections"><a href="#how">How it works</a><a href="#claims">Why WGMI</a><a href="#proof">Proof</a><a href="/app/#/tokens">Tokens</a><a href="/docs/">Docs</a></nav>
+    <nav class="links" aria-label="Sections"><a href="#how">How it works</a><a href="#claims">Why WGMI</a><a href="#proof">Proof</a><a href="#token">$WGMI token</a><a href="/app/#/tokens">Tokens</a><a href="/docs/">Docs</a></nav>
     <div class="navr">
       <button class="toggle" type="button" onclick="var r=document.documentElement;var d=(r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches))?'light':'dark';r.dataset.theme=d;try{localStorage.setItem('wgmi.theme',d)}catch(e){};dispatchEvent(new Event('wgmi-theme'))" aria-label="Switch light and dark">Light / dark</button>
       <a class="btn primary small" href="/app/">Launch a token</a>
@@ -440,6 +440,31 @@
     </section>
 
 
+    <section id="token">
+      <div class="token">
+        <div class="coin" aria-hidden="true">
+          <svg viewBox="0 0 300 300">
+            <g transform="rotate(-5 150 150)">
+              <rect x="30" y="30" width="250" height="250" rx="56" fill="var(--shadow)"/>
+              <rect x="20" y="20" width="250" height="250" rx="56" fill="#3D5CFF" stroke="var(--outline)" stroke-width="5"/>
+              <svg x="40" y="40" width="210" height="210" viewBox="0 0 100 100" style="--pf:#FF4F9A"><use href="#pp-plate"/><use href="#pp-happy"/></svg>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <p class="kicker"><svg><use href="#pip"/></svg> The $WGMI token</p>
+          <h2>$WGMI, the token, trades on WGMI.</h2>
+          <p class="lede">Paired with USDC, with a 5% tax. Every hour the engine sells the tax for USDC, pays it to the WGMI treasury and publishes the payout.</p>
+          <div class="ca-row"><span class="ca-tag">CA</span><code>GsMSqFmFCqP2NsTPJ3F8aajvthkwYRQBEDjPPQkeTxZQ</code><button type="button" class="ca-copy" onclick="navigator.clipboard.writeText('GsMSqFmFCqP2NsTPJ3F8aajvthkwYRQBEDjPPQkeTxZQ').then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
+          <ul class="facts">
+            <li><svg><use href="#pip"/></svg><span><b>USDC for the treasury.</b> The whole tax is paid to the WGMI treasury in USDC. Watch it: <a href="https://solscan.io/account/HN53SG4Zx5FtwSd2HP82K2dAQxA8JhHJc8ihGTBnWCFA" target="_blank" rel="noopener">HN53SG4Zx5FtwSd2HP82K2dAQxA8JhHJc8ihGTBnWCFA</a>.</span></li>
+            <li><svg><use href="#pip"/></svg><span><b>Same engine, same ledger.</b> $WGMI's tax runs through the engine every token here uses, and every payout is on its token page with its transactions.</span></li>
+          </ul>
+          <p class="cta" style="margin-top:14px"><a class="btn primary" href="/app/#/t/GsMSqFmFCqP2NsTPJ3F8aajvthkwYRQBEDjPPQkeTxZQ">Buy $WGMI</a><a class="btn secondary" href="https://raydium.io/launchpad/token/?mint=GsMSqFmFCqP2NsTPJ3F8aajvthkwYRQBEDjPPQkeTxZQ" target="_blank" rel="noopener">Raydium</a><a class="btn secondary" href="https://solscan.io/token/GsMSqFmFCqP2NsTPJ3F8aajvthkwYRQBEDjPPQkeTxZQ" target="_blank" rel="noopener">Solscan</a></p>
+        </div>
+      </div>
+    </section>
+
 
     <section id="links">
       <p class="kicker"><svg><use href="#pip"/></svg> Links</p>
@@ -448,7 +473,7 @@
         <a href="https://x.com/wgmiwork" rel="noopener" target="_blank"><b>X</b><span>@wgmiwork</span></a>
         <a href="/docs/"><b>Docs</b><span>fee anatomy, rules, dials, the ledger format</span></a>
         
-        
+        <a href="/app/#/t/GsMSqFmFCqP2NsTPJ3F8aajvthkwYRQBEDjPPQkeTxZQ"><b>$WGMI token</b><span>where $WGMI trades, paired with USDC</span></a>
       </div>
     </section>
   </div>
