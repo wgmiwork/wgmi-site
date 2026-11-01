@@ -22,7 +22,7 @@ ol,ul{padding-left:22px}li{margin:4px 0}
 <body><main>
 <div class="nav"><a href="/"><img class="word word-light" src="/logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="/logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a><a href="/">Home</a><a href="/app/">Launch a token</a><a href="/app/#/tokens">Tokens</a><button class="toggle" type="button" onclick="var r=document.documentElement;var d=r.dataset.theme==='light'?'dark':'light';r.dataset.theme=d;try{localStorage.setItem('wgmi.theme',d)}catch(e){};dispatchEvent(new Event('wgmi-theme'))" aria-label="Switch light and dark">Light / dark</button></div>
 <h1>How WGMI works</h1>
-<p>WGMI is a launchpad on Raydium LaunchLab (Solana). The dev launching a token sets three dials that other launchpads hard-code: the transfer tax, what the tax buys, and the rule that pays holders. An engine runs the payouts every epoch and publishes every step. Everything on this page is what the program and the engine actually do; the verified claims with proof links are on the <a href="/#claims">home page</a>.</p>
+<p>WGMI is a launchpad on Solana. The dev launching a token sets three dials that other launchpads hard-code: the transfer tax, what the tax buys, and the rule that pays holders. An engine runs the payouts every epoch and publishes every step. Everything on this page is what the program and the engine actually do; the verified claims with proof links are on the <a href="/#claims">home page</a>.</p>
 
 <h2>Launching</h2>
 <div class="card"><ol>
@@ -94,5 +94,5 @@ ol,ul{padding-left:22px}li{margin:4px 0}
 <li>Not trustless: the engine is an operator-run service. The snapshot, the rule and the sends are off-chain code with a published ledger.</li>
 <li>Not free of fees: Raydium's 0.25% on the curve and the pool tier's fee remain.</li>
 <li>Not audited. Nothing is guaranteed; a token's tax can only be withdrawn, converted and paid as described, and every epoch can be checked against the ledger.</li></ul></div>
-<p class="muted">wgmi.work · a launchpad on Raydium LaunchLab, Solana</p>
+<p class="muted">wgmi.work · a launchpad on Solana</p>
 </main></body></html>
