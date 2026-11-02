@@ -246,7 +246,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="WGMI home"><img class="word word-light" src="logo/wgmi-wordmark.svg" alt="WGMI"><img class="word word-dark" src="logo/wgmi-wordmark-dark.svg" alt="" aria-hidden="true"></a>
-    <nav class="links" aria-label="Sections"><a href="#how">How it works</a><a href="#claims">Why WGMI</a><a href="#proof">Proof</a><a href="/app/#/tokens">Tokens</a><a href="/docs/">Docs</a></nav>
+    <nav class="links" aria-label="Sections"><a href="#how">How it works</a><a href="#claims">Why WGMI</a><a href="#proof">Proof</a><a href="#token">$WGMI token</a><a href="/app/#/tokens">Tokens</a><a href="/docs/">Docs</a></nav>
     <div class="navr">
       <button class="toggle" type="button" onclick="var r=document.documentElement;var d=r.dataset.theme==='light'?'dark':'light';r.dataset.theme=d;try{localStorage.setItem('wgmi.theme',d)}catch(e){};dispatchEvent(new Event('wgmi-theme'))" aria-label="Switch light and dark">Light / dark</button>
       <a class="btn primary small" href="/app/">Launch a token</a>
@@ -442,6 +442,26 @@
     </section>
 
 
+    <section id="token">
+      <div class="token">
+        <div class="coin" aria-hidden="true">
+          <svg viewBox="0 0 300 300">
+            <g transform="rotate(-5 150 150)">
+                            <rect x="20" y="20" width="250" height="250" rx="56" fill="#0A0C0B" stroke="var(--line)" stroke-width="2"/>
+              <svg x="40" y="40" width="210" height="210" viewBox="0 0 100 100" style="--pf:#63CCA3"><use href="#pp-plate"/><use href="#pp-happy"/></svg>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <p class="kicker"><svg><use href="#pip"/></svg> The $WGMI token</p>
+          <h2>$WGMI, paired with PUMP.</h2>
+          <p class="lede">The platform's own token, launched by the WGMI treasury on pump.fun and paired with PUMP.</p>
+          <div class="ca-row"><span class="ca-tag">CA</span><code>Tdt1iAmcuBYZkxTS53MbGtBQN4CtTYn8U7u72Uypump</code><button type="button" class="ca-copy" onclick="navigator.clipboard.writeText('Tdt1iAmcuBYZkxTS53MbGtBQN4CtTYn8U7u72Uypump').then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
+          <p class="cta" style="margin-top:14px"><a class="btn primary" href="https://pump.fun/coin/Tdt1iAmcuBYZkxTS53MbGtBQN4CtTYn8U7u72Uypump" target="_blank" rel="noopener">Buy on pump.fun</a><a class="btn secondary" href="https://dexscreener.com/solana/HWUVZu7Dv9LCrqGtT32SotMcVNcqQKC8wB5RbGbDw4kx" target="_blank" rel="noopener">DexScreener</a><a class="btn secondary" href="https://solscan.io/token/Tdt1iAmcuBYZkxTS53MbGtBQN4CtTYn8U7u72Uypump" target="_blank" rel="noopener">Solscan</a></p>
+        </div>
+      </div>
+    </section>
+
 
     <section id="links">
       <p class="kicker"><svg style="--pf:var(--sky)"><use href="#pip"/></svg> Links</p>
@@ -450,7 +470,7 @@
         <a href="https://x.com/wgmiwork" rel="noopener" target="_blank"><b>X</b><span>@wgmiwork</span></a>
         <a href="/docs/"><b>Docs</b><span>fee anatomy, rules, dials, the ledger format</span></a>
         
-        
+        <a href="https://pump.fun/coin/Tdt1iAmcuBYZkxTS53MbGtBQN4CtTYn8U7u72Uypump" rel="noopener" target="_blank"><b>$WGMI token</b><span>where $WGMI trades, paired with PUMP</span></a>
       </div>
     </section>
   </div>
